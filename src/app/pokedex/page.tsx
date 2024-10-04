@@ -57,13 +57,32 @@ const PokedexPage = () => {
       <div className='bg-white w-4/5 m-auto p-4 mt-12'>
         <div className="flex flex-col items-center justify-center mb-4">
           <p className='text-xl font-bold'>Pokedex</p>
-          <p>Search Pokemon by name or national pokedex number.</p>
-          <div>
-            <input value={searchPokemon}
-              className='bg-slate-300 rounded-md py-1 px-2 outline-none'
-              onChange={onChangeSearch}
-              type="text" placeholder='Name or number'>
-            </input>
+          <p>Search Pokemon by name</p>
+
+          <div className='flex'>
+            <div className="flex items-center border border-gray-300 rounded-md bg-slate-300">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="h-7 w-7 text-gray-500 p-2"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                />
+              </svg>
+              <input
+                value={searchPokemon}
+                className="bg-transparent py-1 px-2 outline-none flex-1"
+                onChange={onChangeSearch}
+                type="text"
+                placeholder="Name or number"
+              />
+            </div>
             <button
               className='bg-blue-400 text-white py-1 px-5 ml-2 rounded-md'
               onClick={findPokemons}
@@ -90,11 +109,11 @@ const PokedexPage = () => {
                 </Link>
                 <div className='flex justify-between mt-2 mb-1'>
                   <p className='text-sm'>{`n ${numberPokemon}`}</p>
-                  <button className='bg-purple-600 rounded-md w-16 text-sm'>Grass</button>
+                  <button className='bg-purple-600 rounded w-16 text-sm'>Grass</button>
                 </div>
                 <div className='flex justify-between'>
                   <p className='text-sm font-bold'>{upperFirstLetterPokemon}</p>
-                  <button className='bg-purple-600 rounded-md w-16 text-sm'>Poison</button>
+                  <button className='bg-purple-600 rounded w-16 text-sm'>Poison</button>
                 </div>
               </div>
             );
