@@ -8,10 +8,10 @@ const ClientPokemonList = ({ listOfPokemons }) => {
   const [pokemonDetails, setPokemonDetails] = useState([]);
   const [searchPokemon, setSearchPokemon] = useState('');
 
-  // Just set 10 pokemons
+  // Just set 1 pokemons
   useEffect(() => {
     if(listOfPokemons.length > 0) {
-      const pokemons = listOfPokemons.filter((pokemon) => pokemon.id <11)
+      const pokemons = listOfPokemons.filter((pokemon) => pokemon.id <151)
       setPokemonDetails(pokemons)
     }
   }, [listOfPokemons])
@@ -78,7 +78,7 @@ const ClientPokemonList = ({ listOfPokemons }) => {
             <div key={pokemon.name} className='p-4'>
               <Link href={`/pokedex/${pokemon.id}`}>
                 <Image
-                  src={pokemon.sprites.front_default}
+                  src={pokemon.sprites.other.home.front_default}
                   alt={pokemon.name}
                   className='bg-slate-700 rounded-xl'
                   width={800}

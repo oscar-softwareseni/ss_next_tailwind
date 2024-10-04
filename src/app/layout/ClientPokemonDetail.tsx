@@ -71,7 +71,7 @@ const ClientPokemonDetail = ({ pokemonDetail }) => {
               </div>
             </div>
             <Image
-              src={data.sprites.front_default}
+              src={data.sprites.other.home.front_default}
               alt={data.name}
               className='bg-slate-700 rounded-xl'
               width={800}
@@ -91,28 +91,28 @@ const ClientPokemonDetail = ({ pokemonDetail }) => {
 
             <div className='flex justify-evenly mt-4'>
               <Image
-                src={data.sprites.front_default}
+                src={data.sprites.other.home.front_default}
                 alt={data.name}
                 className='bg-slate-700 rounded-xl'
                 width={70}
                 height={50}
               />
               <Image
-                src={data.sprites.back_default}
+                src={data.sprites.other["official-artwork"].front_default}
                 alt={data.name}
                 className='bg-slate-700 rounded-xl'
                 width={70}
                 height={50}
               />
               <Image
-                src={data.sprites.front_shiny}
+                src={data.sprites.other.home.front_shiny}
                 alt={data.name}
                 className='bg-slate-700 rounded-xl'
                 width={70}
                 height={50}
               />
               <Image
-                src={data.sprites.back_shiny}
+                src={data.sprites.other["official-artwork"].front_default}
                 alt={data.name}
                 className='bg-slate-700 rounded-xl'
                 width={70}
