@@ -60,7 +60,7 @@ const ClientPokemonDetail = ({ pokemonDetail }) => {
       </div>
 
       <div className='border-solid border-2 border-black rounded-md p-4'>
-        <div className="grid grid-cols-2 gap-x-2 mt-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-2 mt-3">
           <div>
             <p>n {data?.id.toString().padStart(3, '0')}</p>
             <div className="flex justify-between items-center mb-2">
@@ -81,7 +81,7 @@ const ClientPokemonDetail = ({ pokemonDetail }) => {
 
           {/* Right Content (Details) */}
           <div className='p-3'>
-            <div className='flex justify-between mt-10'>
+            <div className='flex justify-between mt-4 md:mt-20'>
               <p className='font-bold'>Forms</p>
               <p className='font-bold'>Details</p>
               <p className='font-bold'>Types</p>
