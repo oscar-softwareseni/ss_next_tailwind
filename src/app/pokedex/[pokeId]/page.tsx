@@ -1,5 +1,5 @@
 import React from 'react';
-import PokemonDetailPage from '@/app/layout/PokemonDetailPage';
+import ClientPokemonDetail from '@/app/layout/ClientPokemonDetail';
 
 const PokemonDetail = async ({ params }: { params: { pokeId: number}}) => {
   const { pokeId } = params;
@@ -12,7 +12,7 @@ const PokemonDetail = async ({ params }: { params: { pokeId: number}}) => {
   const data = await response.json();
 
   return (
-    <PokemonDetailPage pokemonDetail={data} />
+    <ClientPokemonDetail pokemonDetail={data} />
   );
 };
 

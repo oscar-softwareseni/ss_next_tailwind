@@ -1,17 +1,15 @@
 'use client';
 
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 
-const PokemonDetailPage = ({ params }) => {
-  const { pokeId } = params;
-  const [data, setData] = useState(null);
+const ClientPokemonDetail = ({ pokemonDetail }) => {
+  const [data, setData] = useState(pokemonDetail);
   const [searchPokemon, setSearchPokemon] = useState('');
 
   const fetchPokemonDetails = async () => {
-    const findPokemon = searchPokemon ? searchPokemon : pokeId;
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${findPokemon}`);
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${searchPokemon}`);
     
     if (!response.ok) {
       throw new Error('Failed to fetch Pokémon details');
@@ -19,10 +17,6 @@ const PokemonDetailPage = ({ params }) => {
     const pokemonData = await response.json();
     setData(pokemonData);
   };
-
-  useEffect(() => {
-    fetchPokemonDetails();
-  }, [pokeId]);
 
   if (!data) {
     return <p>Loading...</p>;
@@ -137,4 +131,4 @@ const PokemonDetailPage = ({ params }) => {
   );
 };
 
-export default PokemonDetailPage;
+export default ClientPokemonDetail;
